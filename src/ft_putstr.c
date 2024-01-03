@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 12:41:03 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/03 08:08:52 by yboumlak         ###   ########.fr       */
+/*   Created: 2023/12/28 20:08:13 by yboumlak          #+#    #+#             */
+/*   Updated: 2023/12/28 20:22:02 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../include/ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+int	ft_putstr(char *str)
+{
+	int	i;
 
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_putnbr(int c);
-
-#endif
+	if (str == NULL)
+		return (write(1, "(null)", 6));
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
+}

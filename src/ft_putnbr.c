@@ -6,27 +6,28 @@
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:02:40 by yboumlak          #+#    #+#             */
-/*   Updated: 2023/12/27 18:07:12 by yboumlak         ###   ########.fr       */
+/*   Updated: 2024/01/03 08:23:38 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-int	ft_putnbr(int n, int *)
+int	ft_putnbr(int n)
 {
-	char	c;
-	long	new_n;
+	long	nb;
+	int		r;
 
-	new_n = n;
-	if (new_n < 0)
+	r = 0;
+	nb = n;
+	if (nb < 0)
 	{
-		write(fd, "-", 1);
-		new_n = -new_n;
+		r += write(1, "-", 1);
+		nb *= -1;
 	}
-	if (new_n >= 10)
+	if (nb > 9)
 	{
-		ft_putnbr(new_n / 10, fd);
+		r += ft_putnbr(nb / 10);
 	}
-	c = (new_n % 10) + '0';
-	write(fd, &c, 1);
+	r += ft_putchar(nb % 10 + 48);
+	return (r);
 }
