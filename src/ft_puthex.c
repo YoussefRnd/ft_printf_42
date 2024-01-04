@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 12:41:03 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/04 19:57:36 by yboumlak         ###   ########.fr       */
+/*   Created: 2024/01/04 12:00:12 by yboumlak          #+#    #+#             */
+/*   Updated: 2024/01/04 19:34:23 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../include/ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <limits.h>
-# include <unistd.h>
+int	ft_puthex(unsigned long n, char c)
+{
+	int		r;
+	char	*base;
 
-int	ft_printf(const char *s, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_putnbr(long long nb);
-int	ft_puthex(unsigned long n, char c);
-
-#endif
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	r = 0;
+	if (n >= 16)
+	{
+		r += ft_puthex(n / 16, c);
+	}
+	r += ft_putchar(base[n % 16]);
+	return (r);
+}

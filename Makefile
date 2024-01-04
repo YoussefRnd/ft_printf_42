@@ -10,7 +10,11 @@ INCLUDE = ./include
 
 HEADER = $(INCLUDE)/ft_printf.h
 
-SRCS = $(SRC)/ft_printf.c
+SRCS = $(SRC)/ft_printf.c \
+	$(SRC)/ft_putchar.c \
+	$(SRC)/ft_putstr.c \
+	$(SRC)/ft_putnbr.c \
+	$(SRC)/ft_puthex.c \
 
 OBJS = $(SRCS:.c=.o)
 
