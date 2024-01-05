@@ -28,7 +28,7 @@ $(NAME): $(OBJS)
 	@echo "Done creating $(NAME)."
 
 $(OBJDIR)/%.o: $(SRC)/%.c $(HEADER)
-	@$(MK) @D
+	@$(MK) $(@D)
 	@echo "Compiling $<..."
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 	@echo "Created!"

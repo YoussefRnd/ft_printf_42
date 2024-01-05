@@ -6,7 +6,7 @@
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:15:37 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/05 15:27:40 by yboumlak         ###   ########.fr       */
+/*   Updated: 2024/01/05 16:18:58 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,18 @@ int	ft_printf(const char *s, ...)
 			length += formatter(args, s[i]);
 		}
 		else
-		{
-			ft_putchar(s[i]);
-			length++;
-		}
+			length += ft_putchar(s[i]);
 		i++;
 	}
 	va_end(args);
 	return (length);
 }
-/* 
+/*
 int	main(void)
 {
-	ft_printf("this is a test %i let's see\n", 2147483648);
-	printf("this is a test %d let's see", 2147483648);
+	// ft_printf("this is a test %i let's see\n", 2147483648);
+	// printf("this is a test %d let's see", 2147483648);
+	ft_printf("idk %ikikksa\n", 3);
+	// printf("idk %kkksa", 3);
 }
- */
+*/
