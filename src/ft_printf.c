@@ -6,7 +6,7 @@
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:15:37 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/04 19:59:21 by yboumlak         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:21:25 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,10 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (length);
 }
-
+/* 
 int	main(void)
 {
-	// int	a;
-
-	ft_printf("this is a test %i let's see\n", INT_MAX + 1);
-	// printf("this is a test %d let's see", INT_MAX + 1);
+	ft_printf("this is a test %i let's see\n", 2147483648);
+	printf("this is a test %d let's see", 2147483648);
 }
+ */
