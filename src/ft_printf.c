@@ -65,11 +65,10 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (length);
 }
-
+/* 
 int	main(void)
 {
-	// int	a;
-
 	ft_printf("this is a test %i let's see\n", INT_MAX + 1);
 	// printf("this is a test %d let's see", INT_MAX + 1);
 }
+ */
