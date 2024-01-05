@@ -3,9 +3,11 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
+MK = mkdir -p
 
 
 SRC = ./src
+OBJDIR = ./obj
 INCLUDE = ./include
 
 HEADER = $(INCLUDE)/ft_printf.h
@@ -16,23 +18,31 @@ SRCS = $(SRC)/ft_printf.c \
 	$(SRC)/ft_putnbr.c \
 	$(SRC)/ft_puthex.c \
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:$(SRC)/%.c=$(OBJDIR)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	@echo "Creating archive $(NAME)..."
+	@$(AR) $(NAME) $(OBJS)
+	@echo "Done creating $(NAME)."
 
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+$(OBJDIR)/%.o: $(SRC)/%.c $(HEADER)
+	@$(MK) @D
+	@echo "Compiling $<..."
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	@echo "Created!"
 
 clean:
-	$(RM) $(OBJS)
+	@echo "Cleaning object files..."
+	@$(RM) $(OBJS)
+	@echo "Done cleaning"
 
 fclean:
-	$(RM) $(NAME) $(OBJS)
+	@echo "Cleaning all files..."
+	@$(RM) $(NAME) $(OBJS)
+	@echo "Done cleaning all."
 
-re:
-	fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
