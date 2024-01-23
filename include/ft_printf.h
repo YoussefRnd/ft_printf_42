@@ -6,7 +6,7 @@
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:41:03 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/09 14:42:10 by yboumlak         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:03:42 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <limits.h>
 # include <unistd.h>
 
 int	ft_printf(const char *s, ...);

@@ -6,7 +6,7 @@
 /*   By: yboumlak <yboumlak@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:15:37 by yboumlak          #+#    #+#             */
-/*   Updated: 2024/01/09 14:41:32 by yboumlak         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:26:20 by yboumlak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (length);
 }
-
-// int	main(void)
-// {
-// 	// ft_printf("fsdkj%jrstgrsft\n");
-// 	printf("ggggg%Lk\n");
-// 	ft_printf("ggggg%Lk");
-// }
